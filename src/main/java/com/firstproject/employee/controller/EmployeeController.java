@@ -21,30 +21,7 @@ public class EmployeeController {
 
 
     private final EmployeeService employeeService;
-   // private static final List<Employee> employees= new ArrayList<>();
 
-
-
-  /*  public EmployeeController(){
-        if (employees.isEmpty()){
-            Employee employee1=new Employee(1,"Erdem","IT",30000);
-            Employee employee2=new Employee(2,"Elif","Tasarım",45000);
-            Employee employee3=new Employee(3,"Eda","Sales",25000);
-            Employee employee4=(new Employee(4,"Yuşa","Accounting",23000));
-            Employee employee5=new Employee(5,"Fatih","Accounting",23000);
-
-
-
-
-            employees.add(employee1);
-            employees.add(employee2);
-            employees.add(employee3);
-            employees.add(employee4);
-            employees.add(employee5);
-
-        }
-
-    } */
 
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployeeList(@RequestParam(required = false) String name){
@@ -52,14 +29,14 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getEmployee(name),OK);
     }
 
-    @GetMapping("/{id}") // Employee bulmak için
+    @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployee(@PathVariable int id){
 
             return new ResponseEntity<>(getEmployeebyId(id),OK);
 
     }
 
-    @PostMapping //Eklemek için
+    @PostMapping
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee newEmployee){
 
 
@@ -67,7 +44,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.createEmployee(newEmployee),HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")  //Güncellemek için
+    @PutMapping("/{id}")
     public ResponseEntity<Void> getEmployee(@PathVariable int id , @RequestBody Employee newEmployee){
             employeeService.updateEmployee(id,newEmployee);
 
@@ -80,7 +57,7 @@ public class EmployeeController {
         return new ResponseEntity<>(OK);
     }
 
-    private Employee getEmployeebyId(int id){  //Kod tekrarından kaçmak için employee filtrelemek amaçlı
+    private Employee getEmployeebyId(int id){
       return employeeService.getEmployeeById(id);
 
 

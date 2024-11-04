@@ -52,7 +52,4 @@ public class EmployeeService {
         employeeRepository.save(oldEmployee);
     }
 
-   /* public Optional<Employee> findEmployeeById(Integer employeeId){
-        return employeeRepository.findById(employeeId);
-    }*/
 }

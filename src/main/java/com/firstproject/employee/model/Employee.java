@@ -17,8 +17,6 @@ import org.springframework.data.annotation.Id;
 @NoArgsConstructor
 public class Employee {
   @Id
- // @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Integer id;
     private String name;
     private String department;

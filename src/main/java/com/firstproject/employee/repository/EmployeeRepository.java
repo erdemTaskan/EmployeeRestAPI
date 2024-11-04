@@ -17,8 +17,3 @@ public interface EmployeeRepository extends MongoRepository<Employee,Integer> {
     
 }
 
-
-
-
-// spring.datasource.url=jdbc:h2:mem:testdb
-//spring.datasource.driverClassName=org.h2.Driver
