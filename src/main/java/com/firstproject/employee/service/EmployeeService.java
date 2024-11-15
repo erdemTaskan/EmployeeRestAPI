@@ -41,7 +41,7 @@ public class EmployeeService {
 
     public Employee getEmployeeById(int id) {
       return employeeRepository.findById(id)
-        .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with id "+id)); //Bulamazsa hata fırlatıyo
+        .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with id "+id));
     }
 
     public void updateEmployee(int id, Employee newEmployee) {
